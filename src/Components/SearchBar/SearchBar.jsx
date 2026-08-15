@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Btn from "../Button/Btn";
-
+import { Search } from "lucide-react";
 export default function SearchBar({ setQuery }) {
     const [input, setInput] = useState("");
 
@@ -26,7 +26,7 @@ export default function SearchBar({ setQuery }) {
                     }}
                 />
 
-                <Btn name="Search" classname={"flex justify-center items-center bg-black text-white h-full w-[10%] rounded-r-full font-extrabold cursor-pointer active:scale-105 transition-transform duration-250"} type={"submit"}/>
+                <Btn name={<Search/>} classname={"flex justify-center items-center bg-black text-white h-full w-[10%] rounded-r-full font-extrabold cursor-pointer active:scale-105 transition-transform duration-250"} type={"submit"}/>
             </form>
         </div>
     );
