@@ -33,7 +33,7 @@ export default function Section_1({paginate}) {
                     ...prev,
                     ...response.data.photos
                 ])
-            }},2000);
+            }},500);
         }
         try{
             setloading(true);
