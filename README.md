@@ -3,7 +3,11 @@
 > A modern, high-performance web application built with **React 19**, **Vite**, **Tailwind CSS v4**, and **Axios**, seamlessly integrated with the **Pexels API**. Explore high-resolution photography with dual navigation modes: **Pagination** & **Infinite Scroll**.
 
 ---
+## 🌐 Live Demo
 
+🚀 **[View Artify Live](https://artify-explorer.netlify.app/)**
+
+---
 ## 🌟 Key Features & Highlights
 
 - ⚡ **Dual Browsing Experience**: Switch effortlessly between **Pagination Mode** and seamless **Infinite Scroll Mode** with a single click.
