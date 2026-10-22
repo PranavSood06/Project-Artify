@@ -1,9 +1,13 @@
-import { useEffect } from "react";
-export default function InfiniteScroll({setpage,loading}){
+import { useEffect, useRef } from "react";
+
+export default function InfiniteScroll({ setpage, loading, hasMore }) {
+    const requestLocked = useRef(false);
+
     useEffect(()=>{
         function handleScroll(){
             const bottom = window.innerHeight + window.scrollY >= window.document.documentElement.scrollHeight - 100 ; 
-            if(bottom) {
+            if (bottom && !loading && hasMore && !requestLocked.current) {
+                requestLocked.current = true;
                 setpage(prev=>prev+1)
             }
         }
@@ -11,6 +15,13 @@ export default function InfiniteScroll({setpage,loading}){
         return()=>{
             window.removeEventListener("scroll",handleScroll)
         }
-    },[setpage,loading])
+    },[setpage, loading, hasMore])
+
+    useEffect(() => {
+        if (!loading) {
+            requestLocked.current = false;
+        }
+    }, [loading]);
+
     return null
 }

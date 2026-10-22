@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 function Navbar({paginate,setpaginate}){
     return(
         <>
@@ -10,9 +8,11 @@ function Navbar({paginate,setpaginate}){
             <div className="h-7 w-65 flex items-center justify-between">
                 <button className={`h-full w-1/2 flex items-center justify-center cursor-pointer  font-bold ${paginate?"bg-white rounded-full text-black": "bg-transparent text-white"} transition-transform hover:scale-105`}
                     onClick={()=>{setpaginate(true)}}
+                    aria-pressed={paginate}
                 >Pagination</button>
                 <button className={`h-full w-1/2 flex items-center justify-center cursor-pointer font-bold  ${(!paginate)?"bg-white rounded-full text-black ": "bg-transparent text-white"} transition-transform hover:scale-105`}
                     onClick={()=>{setpaginate(false)}}
+                    aria-pressed={!paginate}
                 >Infinite Scroll</button>
             </div>
         </div>

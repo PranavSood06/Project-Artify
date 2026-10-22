@@ -7,7 +7,7 @@ function App() {
     <>
       <Navbar paginate={paginate} setpaginate={setpaginate}/>
       <div className="pt-13">
-        <Section_1 paginate={paginate}/> 
+        <Section_1 key={String(paginate)} paginate={paginate}/>
       </div>
     </>
   )

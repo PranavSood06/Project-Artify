@@ -34,7 +34,7 @@ Building Artify provided practical experience with key React & frontend concepts
 3. **DOM Event Listeners & Cleanup**: Attaching a window `scroll` listener to detect scroll thresholds for infinite loading and properly cleaning it up on unmount.
 4. **Conditional Rendering**: Dynamically switching between Pagination controls and Infinite Scroll behaviors based on user preferences.
 5. **Component Decomposition & Props**: Structuring the UI into reusable sub-components and passing handlers and state downward.
-6. **Environment Variable Security**: Storing API credentials safely in `.env` files using Vite's `import.meta.env`.
+6. **Environment Configuration**: Loading configuration from `.env` using Vite's `import.meta.env`. Client-side values are visible in the browser; they are not secret storage.
 
 ---
 
@@ -89,7 +89,7 @@ Follow these instructions to get a local copy up and running on your machine.
 
 ### Prerequisites
 
-Ensure you have **Node.js** (v18 or higher recommended) and **npm** installed on your system.
+Use **Node.js 24 LTS** and **npm**. Install the locked dependencies with `npm ci`.
 
 ### 1. Clone the Repository
 
@@ -114,6 +114,10 @@ VITE_PIXELS_API_KEY=your_pexels_api_key_here
 ```
 
 > **Note**: In Vite projects, environment variables accessible on the client side must start with the `VITE_` prefix.
+
+These values are included in the browser bundle. For a public production deployment, keep private credentials on a server and proxy API requests through it. Restart Vite after changing `.env`.
+
+Run `npm run lint`, `npm test`, and `npm run build` to verify changes. Mode changes restart browsing from page one; searches submit explicitly, so typing does not send requests.
 
 ### 4. Run the Development Server
 

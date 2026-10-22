@@ -7,8 +7,7 @@ export default function SearchBar({ setQuery }) {
     function submitHandler(e) {
         e.preventDefault();
         if(input.trim()=="") return;
-        setQuery(input);
-        console.log(input);
+        setQuery(input.trim());
     }
 
     return (
@@ -18,8 +17,9 @@ export default function SearchBar({ setQuery }) {
                 className="flex justify-between items-center h-[80%] border-2 w-[75%] pl-7 bg-white rounded-full"
             >
                 <input
-                    className="bg-white h-full w-[90%] pl-0 outline-none"
+                    className="bg-white h-full w-[90%] pl-0 !outline-none !ring-0 !border-none focus:!outline-none focus:!ring-0 focus:!shadow-none"
                     placeholder="EXPLORE"
+                    aria-label="Search photos"
                     value={input}
                     onChange={(e) => {
                         setInput(e.target.value);
